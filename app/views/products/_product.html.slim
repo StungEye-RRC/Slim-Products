@@ -5,7 +5,7 @@
     = number_to_currency product.price
   - if full_details
     p = product.description
-    - unless product.image_filename.empty?
-      = image_tag product.image_filename
+    - if product.image.present?
+      = image_tag product.image.small.url
   - else
     p = link_to 'details', product
